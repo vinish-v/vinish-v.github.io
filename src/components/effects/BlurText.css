@@ -1,0 +1,34 @@
+.blur-text-root {
+  display: block;
+}
+
+.blur-word-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.blur-unit {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+.blur-char {
+  display: inline-block;
+  white-space: pre;
+}
+
+.blur-space {
+  display: inline-block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

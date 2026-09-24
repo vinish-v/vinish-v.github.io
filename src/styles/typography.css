@@ -1,0 +1,88 @@
+/* Typography System with Fraunces, Plus Jakarta Sans, and JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+:root {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+
+  --text-hero: clamp(72px, 14vw, 180px);
+  --text-display: clamp(40px, 7vw, 96px);
+  --text-title: clamp(26px, 4vw, 48px);
+  --text-body: 16px;
+  --text-meta: 13px;
+  --transition-main: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fraunces Specific Class from User Request */
+.font-fraunces {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin: 0;
+}
+
+.text-hero {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-size: var(--text-hero);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.text-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-size: var(--text-display);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.text-title {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}

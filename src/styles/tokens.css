@@ -1,0 +1,26 @@
+:root {
+  /* Complete Black & White Palette (ChatGPT Style) */
+  --ink: #0d0d0d;           /* ChatGPT primary dark background */
+  --slate: #171717;         /* ChatGPT card & surface background */
+  --surface-hover: #212121; /* Hover surface container */
+  --coral: #ffffff;         /* Pure crisp white accent */
+  --peach: #a3a3a3;         /* Subtle neutral gray for secondary labels & rules */
+  --cream: #ffffff;         /* Primary crisp white text */
+  --text-muted: #737373;    /* Muted neutral metadata */
+  
+  /* Pure Grayscale Borders & Overlays */
+  --border: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(255, 255, 255, 0.6);
+  --overlay-bg: rgba(13, 13, 13, 0.94);
+
+  /* Layout dimensions */
+  --max-width: 1400px;
+  --max-prose: 680px;
+  --section-padding-y: clamp(80px, 12vh, 140px);
+  --content-padding-x: clamp(20px, 5vw, 64px);
+  
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-normal: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}

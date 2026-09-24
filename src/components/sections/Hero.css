@@ -1,0 +1,102 @@
+.monumental-hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-fullscreen-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: clamp(80px, 12vh, 120px);
+  padding-bottom: clamp(32px, 5vh, 48px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Colossal Name Container */
+.hero-monumental-name-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 clamp(16px, 3vw, 48px);
+  user-select: none;
+}
+
+.hero-depth-title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-monumental-name {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+  font-size: clamp(90px, 21.8vw, 350px);
+  line-height: 0.85;
+  letter-spacing: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.hero-letter-clip {
+  display: inline-block;
+  overflow: visible;
+  padding: 0 4px;
+}
+
+.hero-letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Bottom Bar */
+.hero-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.hero-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-scroll-cue {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .hero-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

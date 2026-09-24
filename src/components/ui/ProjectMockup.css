@@ -1,0 +1,243 @@
+.project-mockup {
+  background-color: #111111;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast);
+}
+
+.mockup-window-bar {
+  background-color: #1c1c1c;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mockup-dots .dot:first-child {
+  background-color: #ffffff;
+}
+
+.mockup-dots .dot:nth-child(2) {
+  background-color: #888888;
+}
+
+.mockup-title {
+  font-size: 11px;
+  color: #ffffff;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.mockup-badge {
+  font-size: 10px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.mockup-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HR Mockup Styles */
+.hr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .hr-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hr-panel {
+  background-color: #000000;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-title {
+  font-size: 10px;
+  color: #a3a3a3;
+}
+
+.parse-status, .db-status {
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.code-block {
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.code-block .k {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.code-block .s {
+  color: #cccccc;
+}
+
+.code-block .n {
+  color: #888888;
+}
+
+.employee-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.avatar-chip {
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  background-color: #262626;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.emp-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.emp-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.emp-role {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.verified-tag {
+  font-size: 9px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* Chat Mockup Styles */
+.chat-content {
+  gap: 16px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.chat-bubble .sender {
+  font-size: 9px;
+  margin-bottom: 3px;
+  display: block;
+  opacity: 0.6;
+}
+
+.chat-bubble.incoming {
+  background-color: #171717;
+  border: 1px solid var(--border);
+  align-self: flex-start;
+  color: #ffffff;
+}
+
+.chat-bubble.outgoing {
+  background-color: #262626;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  align-self: flex-end;
+  color: #ffffff;
+}
+
+.smart-replies-bar {
+  background-color: #000000;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.smart-title {
+  font-size: 10px;
+  color: #a3a3a3;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sparkle {
+  color: #ffffff;
+}
+
+.smart-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.reply-chip {
+  font-size: 10px;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}

@@ -1,0 +1,111 @@
+.clean-profile-card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  background-color: var(--slate);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: left;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.clean-profile-card.is-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-platform-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.pcard-arrow {
+  color: #ffffff;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.clean-profile-card.is-interactive:hover .pcard-arrow {
+  transform: translate(2px, -2px);
+}
+
+.pcard-pending-badge {
+  font-size: 11px;
+  color: #a3a3a3;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+}
+
+.card-middle-content {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pcard-handle {
+  font-size: 14px;
+  color: #a3a3a3;
+  letter-spacing: 0.02em;
+}
+
+.pcard-stat-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pcard-stat-num {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.pcard-stat-label {
+  font-size: 12px;
+  color: #a3a3a3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.card-bottom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  gap: 12px;
+}
+
+.pcard-extra {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pcard-action-text {
+  color: #ffffff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.clean-profile-card.is-interactive:hover .pcard-action-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

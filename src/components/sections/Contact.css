@@ -1,0 +1,118 @@
+.clean-contact-section {
+  position: relative;
+  padding-bottom: clamp(36px, 5vh, 56px);
+}
+
+.clean-contact-section .contact-editorial-wrap {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.clean-contact-section.reveal-active .contact-editorial-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-editorial-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact-colossal-title {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-size: clamp(50px, 7.7vw, 200px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  max-width: 960px;
+}
+
+.contact-body-text {
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.highlight-text {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-buttons-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.contact-main-btn {
+  font-size: 15px;
+  padding: 16px 32px;
+}
+
+/* Unified clean bottom line without redundant footer and unwanted spacing */
+.contact-bottom-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.bottom-line-left {
+  display: flex;
+  align-items: baseline;
+}
+
+.bottom-line-left .brand-name {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact-top-btn {
+  font-size: 13px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: transparent;
+  padding: 4px 8px;
+  transition: opacity 0.2s ease;
+}
+
+.contact-top-btn:hover {
+  opacity: 0.7;
+}
+
+.contact-top-btn .arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.contact-top-btn:hover .arrow-icon {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-bottom-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

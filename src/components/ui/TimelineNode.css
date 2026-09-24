@@ -1,0 +1,119 @@
+.timeline-node {
+  display: flex;
+  gap: clamp(20px, 4vw, 36px);
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  position: relative;
+}
+
+.marker-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--peach);
+  background-color: var(--ink);
+  margin-top: 4px;
+  z-index: 2;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.timeline-node:hover .marker-dot {
+  background-color: var(--peach);
+}
+
+.marker-line {
+  width: 2px;
+  flex: 1;
+  background-color: var(--peach);
+  opacity: 0.6;
+  margin-top: 4px;
+  min-height: 80px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: clamp(36px, 6vw, 56px);
+  text-align: left;
+}
+
+.timeline-node.is-last .timeline-content {
+  padding-bottom: 0;
+}
+
+.timeline-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.timeline-period {
+  font-size: 13px;
+  color: var(--peach);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.timeline-badge {
+  font-size: 11px;
+  background-color: rgba(255, 210, 166, 0.1);
+  color: var(--peach);
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 210, 166, 0.2);
+}
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: var(--cream);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-org {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--cream);
+  font-weight: 500;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+
+.timeline-loc {
+  color: rgba(255, 243, 233, 0.6);
+  font-weight: 400;
+}
+
+.timeline-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: var(--max-prose);
+}
+
+.timeline-detail-item {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(255, 243, 233, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.timeline-detail-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--peach);
+  opacity: 0.7;
+}

@@ -1,0 +1,257 @@
+@import './tokens.css';
+@import './typography.css';
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+body {
+  background-color: var(--ink);
+  color: var(--cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Monochromatic Selection like ChatGPT */
+::selection {
+  background-color: #ffffff;
+  color: #0d0d0d;
+}
+
+/* Layout Utilities */
+.site-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+}
+
+.prose-column {
+  max-width: var(--max-prose);
+}
+
+/* Section Shell */
+.portfolio-section {
+  padding-top: clamp(80px, 12vh, 140px);
+  padding-bottom: clamp(80px, 12vh, 140px);
+  position: relative;
+  border-top: 1px solid var(--border);
+}
+
+/* Section Header (Olha Lazarieva index + label in black & white) */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(32px, 5vw, 64px);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-header-rule {
+  width: 24px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.section-header-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  color: var(--peach);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-header-index {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* Links & Interactive */
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Olha Lazarieva Signature Bracket Link in Grayscale */
+.bracket-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0 16px;
+  color: var(--cream);
+  transition: color 0.3s var(--transition-main);
+  white-space: nowrap;
+}
+
+.bracket-link::before {
+  content: "[";
+  position: absolute;
+  left: 4px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: left 0.3s var(--transition-main), color 0.3s var(--transition-main);
+}
+
+.bracket-link::after {
+  content: "]";
+  position: absolute;
+  right: 4px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: right 0.3s var(--transition-main), color 0.3s var(--transition-main);
+}
+
+.bracket-link:hover::before {
+  left: 0;
+  color: #ffffff;
+}
+
+.bracket-link:hover::after {
+  right: 0;
+  color: #ffffff;
+}
+
+.bracket-link:hover {
+  color: #ffffff;
+}
+
+.bracket-link .arrow-icon {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 0.4s var(--transition-main);
+}
+
+.bracket-link:hover .arrow-icon {
+  transform: rotate(45deg);
+}
+
+/* Black & White Buttons (ChatGPT Style) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #0d0d0d;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.2s var(--transition-main);
+}
+
+.btn-primary:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #ffffff;
+  background-color: #212121;
+}
+
+/* Rotating arrow utility */
+.rotate-arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--transition-main);
+}
+
+a:hover .rotate-arrow {
+  transform: rotate(45deg);
+}
+
+/* Tech Tag (Grayscale / JetBrains Mono) */
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #e5e5e5;
+  background-color: #1a1a1a;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sep-dot {
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 10px;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Accessibility / Focus States */
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
