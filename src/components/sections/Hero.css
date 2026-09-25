@@ -27,6 +27,7 @@
   width: 100%;
   padding: 0 clamp(16px, 3vw, 48px);
   user-select: none;
+  opacity: 1;
 }
 
 .hero-depth-title {

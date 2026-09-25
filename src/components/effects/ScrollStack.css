@@ -1,0 +1,27 @@
+.scroll-stack-container {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-stack-deck {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+}
+
+.scroll-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transform-origin: top center;
+  will-change: transform, filter;
+}
+
+@media (max-width: 768px) {
+  .scroll-stack-deck {
+    min-height: 460px;
+  }
+}

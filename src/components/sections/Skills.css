@@ -41,19 +41,24 @@
   line-height: 1.5;
 }
 
-/* Horizontal Expanding Columns */
+/* Horizontal Expanding Columns - Fixed rock-solid height */
 .clean-services-wrapper {
   display: flex;
   width: 100%;
-  min-height: 480px;
+  height: 520px;
+  min-height: 520px;
+  max-height: 520px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
   border-radius: 8px;
+  align-items: stretch;
 }
 
 .clean-service-column {
   flex: 1;
+  height: 100%;
+  box-sizing: border-box;
   border-right: 1px solid var(--border);
   padding: 32px 24px;
   display: flex;
@@ -61,7 +66,7 @@
   justify-content: space-between;
   cursor: pointer;
   background-color: var(--ink);
-  transition: flex 0.6s var(--transition-main), background-color 0.3s ease, border-color 0.3s ease;
+  transition: flex 0.6s var(--transition-main), background-color 0.35s ease;
   position: relative;
   overflow: hidden;
   outline: none;
@@ -71,15 +76,47 @@
   border-right: none;
 }
 
+/* Hover: Invert to pure white background with black text with smooth transition */
 .clean-service-column:hover,
 .clean-service-column:focus-visible {
-  background-color: #171717;
+  background-color: #ffffff;
+}
+
+.clean-service-column:hover .service-num,
+.clean-service-column:hover .service-title,
+.clean-service-column:hover .li-name {
+  color: #000000 !important;
+}
+
+.clean-service-column:hover .service-item-dot {
+  background-color: #000000 !important;
+}
+
+.clean-service-column:hover .skills-list-title,
+.clean-service-column:hover .service-footer-label {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.clean-service-column:hover .service-description {
+  color: #171717 !important;
+  border-top-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.clean-service-column:hover .service-column-footer {
+  border-top-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.clean-service-column:hover .service-footer-dot {
+  background-color: #000000 !important;
 }
 
 .clean-service-column.is-active {
   flex: 2.8;
   background-color: #1c1c1c;
-  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.clean-service-column.is-active:hover {
+  background-color: #ffffff;
 }
 
 /* Top part */
@@ -93,12 +130,27 @@
 .service-num {
   font-size: 13px;
   color: #a3a3a3;
-  transition: color 0.3s ease;
+  transition: color 0.35s ease;
 }
 
 .clean-service-column.is-active .service-num {
   color: #ffffff;
   font-weight: 700;
+}
+
+/* Frontend (col 2): Electric Blue */
+.clean-service-column:nth-child(2).is-active:not(:hover) .service-num {
+  color: var(--accent-blue);
+}
+
+/* Backend (col 3): Radiant Orange */
+.clean-service-column:nth-child(3).is-active:not(:hover) .service-num {
+  color: var(--accent-orange);
+}
+
+/* CP & Algorithms (col 7): Coral Red */
+.clean-service-column:nth-child(7).is-active:not(:hover) .service-num {
+  color: var(--accent-red);
 }
 
 .service-title-wrap {
@@ -114,6 +166,7 @@
   color: #ffffff;
   line-height: 1.1;
   display: block;
+  transition: color 0.35s ease;
 }
 
 /* Body / Expanded View */
@@ -143,6 +196,7 @@
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  transition: color 0.35s ease;
 }
 
 .service-items-list ul {
@@ -155,13 +209,16 @@
 .service-item-li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.li-index {
-  font-size: 11px;
-  color: #ffffff;
-  font-weight: 600;
+.service-item-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  transition: background-color 0.35s ease;
+  flex-shrink: 0;
 }
 
 .li-name {
@@ -169,6 +226,7 @@
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.01em;
+  transition: color 0.35s ease;
 }
 
 .service-description {
@@ -179,6 +237,7 @@
   max-width: 440px;
   padding-top: 16px;
   border-top: 1px dashed var(--border);
+  transition: color 0.35s ease, border-color 0.35s ease;
 }
 
 /* Footer / indicator */
@@ -188,6 +247,7 @@
   justify-content: space-between;
   padding-top: 16px;
   border-top: 1px solid var(--border);
+  transition: border-color 0.35s ease;
 }
 
 .service-footer-dot {
@@ -195,7 +255,7 @@
   height: 6px;
   border-radius: 50%;
   background-color: #a3a3a3;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.35s ease;
 }
 
 .clean-service-column.is-active .service-footer-dot {
@@ -205,6 +265,90 @@
 .service-footer-label {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.35s ease;
+}
+
+/* Desktop: Unhovered / Collapsed Columns with Vertical 90 deg Rotated Headings */
+@media (min-width: 1025px) {
+  .clean-service-column:not(.is-active):not(:hover) {
+    padding: 32px 14px;
+    align-items: center;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-column-top {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-num {
+    margin-bottom: 24px;
+    align-self: center;
+    font-size: 13px;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-title-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: clamp(20px, 1.8vw, 24px);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1;
+    display: inline-block;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-column-body {
+    display: none;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-column-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .clean-service-column:not(.is-active):not(:hover) .service-footer-label {
+    display: none;
+  }
+
+  /* When hovered, immediately enforce horizontal expanded display */
+  .clean-service-column:hover .service-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    color: #000000 !important;
+  }
+
+  .clean-service-column:hover .service-title-wrap {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .clean-service-column:hover .service-column-body {
+    display: flex;
+  }
+
+  .clean-service-column:hover .service-column-footer {
+    justify-content: space-between;
+  }
+
+  .clean-service-column:hover .service-footer-label {
+    display: inline;
+  }
 }
 
 /* Responsive: Turn into stacked accordion on mobile / tablets */
@@ -212,6 +356,8 @@
   .clean-services-wrapper {
     flex-direction: column;
     min-height: auto;
+    height: auto;
+    max-height: none;
   }
 
   .clean-service-column {

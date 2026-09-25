@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { profileData } from '../../data/profile';
 import './Navbar.css';
 
 export const Navbar: React.FC = () => {
@@ -47,7 +48,13 @@ export const Navbar: React.FC = () => {
 
         {/* Right Info: Contact CTA without brackets */}
         <div className="clean-nav-right">
-          <a href="mailto:viniv6687@gmail.com" className="clean-contact-cta">
+          <a
+            href={profileData.gmailComposeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="clean-contact-cta"
+            aria-label="Compose email to Vinish in Gmail"
+          >
             <span>Get in Touch</span>
             <span className="cta-arrow">↗</span>
           </a>
@@ -86,7 +93,13 @@ export const Navbar: React.FC = () => {
 
             <div className="mobile-drawer-footer font-mono">
               <p>Coimbatore, India · Open for Roles</p>
-              <a href="mailto:viniv6687@gmail.com" className="mobile-email-link">
+              <a
+                href={profileData.gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-email-link"
+                aria-label="Compose email to Vinish in Gmail"
+              >
                 viniv6687@gmail.com ↗
               </a>
             </div>

@@ -37,7 +37,7 @@ export const socialLinks = {
   },
   email: {
     name: "Email",
-    url: "mailto:viniv6687@gmail.com",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=viniv6687@gmail.com",
     handle: "viniv6687@gmail.com",
     label: "viniv6687@gmail.com",
     isTodo: false

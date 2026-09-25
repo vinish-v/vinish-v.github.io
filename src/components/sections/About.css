@@ -251,78 +251,6 @@
   padding-top: 16px;
 }
 
-/* Specs 3-column Grid */
-.about-specs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-
-.spec-card {
-  background-color: var(--slate);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: left;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.spec-card:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-}
-
-.spec-card-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.spec-num {
-  font-size: 13px;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.spec-title {
-  font-size: 12px;
-  color: #a3a3a3;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.spec-value {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #ffffff;
-}
-
-.spec-detail {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.02em;
-}
-
-.spec-badge {
-  font-size: 11px;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 10px;
-  border-radius: 9999px;
-  width: fit-content;
-  margin-top: 4px;
-}
-
 @media (max-width: 960px) {
   .about-content-layout {
     grid-template-columns: 1fr;
@@ -331,9 +259,5 @@
 
   .about-photo-wrapper {
     height: 320px;
-  }
-
-  .about-specs-grid {
-    grid-template-columns: 1fr;
   }
 }

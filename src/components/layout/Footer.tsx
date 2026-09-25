@@ -1,4 +1,5 @@
 import React from 'react';
+import { profileData } from '../../data/profile';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
@@ -27,8 +28,14 @@ export const Footer: React.FC = () => {
             Back to Top <span className="arrow-icon">↑</span>
           </button>
           
-          <a href="mailto:viniv6687@gmail.com" className="footer-email-btn">
-            viniv6687@gmail.com
+          <a 
+            href={profileData.gmailComposeUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="footer-email-btn"
+            aria-label={`Compose email to ${profileData.email} in Gmail`}
+          >
+            {profileData.email}
           </a>
         </div>
       </div>

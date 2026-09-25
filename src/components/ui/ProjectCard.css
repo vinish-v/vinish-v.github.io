@@ -78,6 +78,22 @@
   text-transform: uppercase;
 }
 
+/* Project 1 (AI HR): Electric Blue Accent */
+.clean-project-card:nth-child(1) .card-category-tag {
+  color: var(--accent-blue);
+}
+.clean-project-card:nth-child(1):hover {
+  border-color: var(--accent-blue-border);
+}
+
+/* Project 2 (Chat App): Radiant Orange Accent */
+.clean-project-card:nth-child(2) .card-category-tag {
+  color: var(--accent-orange);
+}
+.clean-project-card:nth-child(2):hover {
+  border-color: var(--accent-orange-border);
+}
+
 .card-title {
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;

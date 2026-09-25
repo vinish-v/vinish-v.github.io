@@ -3,6 +3,7 @@ export interface ProfileData {
   role: string;
   location: string;
   email: string;
+  gmailComposeUrl: string;
   phone?: string;
   photoUrl: string;
   degree: string;
@@ -23,6 +24,7 @@ export const profileData: ProfileData = {
   role: "Full-Stack Developer",
   location: "Coimbatore, India",
   email: "viniv6687@gmail.com",
+  gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=viniv6687@gmail.com",
   phone: "+91 90253 49047",
   photoUrl: "/vini_suitcoat.jpeg",
   degree: "B.E. Electronics & Communication Engineering",

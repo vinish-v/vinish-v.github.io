@@ -118,7 +118,7 @@ export const Skills: React.FC = () => {
                     <ul>
                       {block.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="service-item-li">
-                          <span className="li-index font-mono">0{itemIdx + 1}</span>
+                          <span className="service-item-dot" />
                           <span className="li-name font-sans">{item}</span>
                         </li>
                       ))}
@@ -133,9 +133,7 @@ export const Skills: React.FC = () => {
                 {/* Bottom Indicator */}
                 <div className="service-column-footer">
                   <span className="service-footer-dot" />
-                  <span className="service-footer-label font-mono">
-                    {isActive ? 'Active' : `${block.items.length} items`}
-                  </span>
+                  <span className="service-footer-label font-mono">Domain</span>
                 </div>
               </div>
             );

@@ -40,9 +40,11 @@ export const Contact: React.FC = () => {
           {/* Action CTAs: Modern Buttons */}
           <div className="contact-buttons-group">
             <a
-              href={`mailto:${profileData.email}`}
+              href={profileData.gmailComposeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary contact-main-btn"
-              aria-label={`Send email to ${profileData.email}`}
+              aria-label={`Compose email to ${profileData.email} in Gmail`}
             >
               {profileData.email} ↗
             </a>

@@ -43,9 +43,10 @@
 }
 
 .highlight-text {
-  color: #ffffff;
+  color: var(--accent-orange);
   font-weight: 600;
   text-decoration: underline;
+  text-decoration-color: var(--accent-orange-border);
   text-underline-offset: 4px;
 }
 

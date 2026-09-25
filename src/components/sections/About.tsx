@@ -162,43 +162,16 @@ export const About: React.FC = () => {
               <a href="#work" className="btn-primary">
                 Explore Selected Projects ↗
               </a>
-              <a href={`mailto:${profileData.email}`} className="btn-secondary">
+              <a
+                href={profileData.gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                aria-label={`Compose email to ${profileData.email} in Gmail`}
+              >
                 Direct Inquiry ↗
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Structured Spec Cards Grid */}
-        <div className="about-specs-grid">
-          <div className="spec-card">
-            <div className="spec-card-header font-mono">
-              <span className="spec-num">01</span>
-              <span className="spec-title">Degree & Academics</span>
-            </div>
-            <p className="spec-value font-fraunces">{profileData.degree}</p>
-            <p className="spec-detail font-mono">{profileData.institution} · CGPA {profileData.cgpa}</p>
-            <span className="spec-badge font-mono">Graduation: {profileData.graduation}</span>
-          </div>
-
-          <div className="spec-card">
-            <div className="spec-card-header font-mono">
-              <span className="spec-num">02</span>
-              <span className="spec-title">Target Locations</span>
-            </div>
-            <p className="spec-value font-fraunces">{profileData.targetLocations.join(' · ')}</p>
-            <p className="spec-detail font-mono">Open to Relocation & Remote / Hybrid</p>
-            <span className="spec-badge font-mono">Full-Time & Internships</span>
-          </div>
-
-          <div className="spec-card">
-            <div className="spec-card-header font-mono">
-              <span className="spec-num">03</span>
-              <span className="spec-title">Core Specialty</span>
-            </div>
-            <p className="spec-value font-fraunces">MERN Stack + LLM Pipelines</p>
-            <p className="spec-detail font-mono">RESTful APIs · Socket.IO · PDF Parsing</p>
-            <span className="spec-badge font-mono">1000+ Algorithmic Challenges Solved</span>
           </div>
         </div>
       </div>

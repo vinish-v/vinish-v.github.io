@@ -30,19 +30,23 @@ export const Hero: React.FC = () => {
           opacity: 1,
           duration: 1.0,
           ease: 'power2.out',
+          onComplete: () => {
+            if (nameRef.current) {
+              nameRef.current.style.opacity = '1';
+            }
+          },
         }
       );
 
-      // ScrollTrigger Parallax on monumental name
+      // ScrollTrigger Parallax on monumental name (maintains full opacity)
       gsap.to(nameRef.current, {
-        yPercent: 28,
-        opacity: 0.25,
+        yPercent: 25,
         ease: 'none',
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: 1,
+          scrub: true,
         },
       });
     }
