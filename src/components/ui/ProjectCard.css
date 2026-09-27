@@ -1,22 +1,24 @@
 .clean-project-card {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: clamp(24px, 5vw, 64px);
+  gap: clamp(24px, 4vw, 56px);
   align-items: center;
-  padding: clamp(24px, 4vw, 48px);
+  padding: clamp(24px, 3.5vw, 44px);
   background-color: var(--slate);
   border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
   outline: none;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
   position: relative;
+  box-shadow: none;
 }
 
 .clean-project-card:hover,
 .clean-project-card:focus-visible {
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-2px);
+  box-shadow: none;
 }
 
 /* Alternating layout */
@@ -49,43 +51,39 @@
 }
 
 .clean-project-card:hover .card-image-scaler {
-  transform: scale(1.025);
+  transform: scale(1.02);
 }
 
 /* Info Column */
 .card-info-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   text-align: left;
 }
 
 .card-meta-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   font-size: 12px;
-}
-
-.card-index-tag {
-  color: #ffffff;
-  font-weight: 600;
 }
 
 .card-category-tag {
   color: #a3a3a3;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
-/* Card Accent Variants */
+/* Card Accent Variants — Clean Borders Only, No Shadows */
 .clean-project-card.card-accent-emerald .card-category-tag {
   color: var(--accent-emerald);
 }
 .clean-project-card.card-accent-emerald:hover,
 .clean-project-card.card-accent-emerald:focus-visible {
   border-color: var(--accent-emerald-border);
-  box-shadow: 0 12px 36px -10px var(--accent-emerald-dim);
+  box-shadow: none;
 }
 
 .clean-project-card.card-accent-purple .card-category-tag {
@@ -94,7 +92,7 @@
 .clean-project-card.card-accent-purple:hover,
 .clean-project-card.card-accent-purple:focus-visible {
   border-color: var(--accent-purple-border);
-  box-shadow: 0 12px 36px -10px var(--accent-purple-dim);
+  box-shadow: none;
 }
 
 .clean-project-card.card-accent-blue .card-category-tag {
@@ -103,7 +101,7 @@
 .clean-project-card.card-accent-blue:hover,
 .clean-project-card.card-accent-blue:focus-visible {
   border-color: var(--accent-blue-border);
-  box-shadow: 0 12px 36px -10px var(--accent-blue-dim);
+  box-shadow: none;
 }
 
 .clean-project-card.card-accent-orange .card-category-tag {
@@ -112,13 +110,13 @@
 .clean-project-card.card-accent-orange:hover,
 .clean-project-card.card-accent-orange:focus-visible {
   border-color: var(--accent-orange-border);
-  box-shadow: 0 12px 36px -10px var(--accent-orange-dim);
+  box-shadow: none;
 }
 
 .card-title {
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.15;
@@ -128,7 +126,7 @@
 .card-summary {
   font-family: var(--font-sans);
   color: rgba(255, 255, 255, 0.78);
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.6;
 }
 
@@ -136,16 +134,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .card-actions-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 12px;
-  padding-top: 16px;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 14px;
   border-top: 1px solid var(--border);
 }
 
@@ -158,8 +156,8 @@
 @media (max-width: 880px) {
   .clean-project-card {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px 16px;
+    gap: 20px;
+    padding: 20px 16px;
   }
 
   .clean-project-card.image-left .card-visual-wrapper,

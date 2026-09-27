@@ -7,7 +7,6 @@ import type { ProjectItem } from '../../data/projects';
 import { ProjectCard } from '../ui/ProjectCard';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import { BlurText } from '../effects/BlurText';
 import './Work.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,25 +24,12 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
 
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
 
   const filterOptions = [
-    { id: 'All', label: 'All Projects', count: projectsData.length },
-    { 
-      id: 'Developer Tooling', 
-      label: 'Developer Tooling', 
-      count: projectsData.filter(p => p.category === 'Developer Tooling').length 
-    },
-    { 
-      id: 'Mobile Systems', 
-      label: 'Mobile Systems', 
-      count: projectsData.filter(p => p.category === 'Mobile Systems').length 
-    },
-    { 
-      id: 'Full-Stack & AI', 
-      label: 'Full-Stack & AI', 
-      count: projectsData.filter(p => p.category === 'Production Architecture' || p.category === 'Real-Time Systems').length 
-    },
+    { id: 'All', label: 'All Projects' },
+    { id: 'Developer Tooling', label: 'Developer Tooling' },
+    { id: 'Mobile Systems', label: 'Mobile Systems' },
+    { id: 'Full-Stack & AI', label: 'Full-Stack & AI' },
   ];
 
   const filteredProjects = selectedFilter === 'All'
@@ -70,7 +56,6 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
       if (slides.length <= 1) {
         gsap.set(track, { clearProps: 'all' });
         setActiveSlideIndex(0);
-        setScrollProgress(0);
         return;
       }
 
@@ -94,9 +79,8 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
         animation: horizontalTween,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
-          setScrollProgress(self.progress);
           const currentSlide = Math.min(
-            Math.floor(self.progress * slides.length + 0.1),
+            Math.floor(self.progress * slides.length + 0.05),
             slides.length - 1
           );
           setActiveSlideIndex(currentSlide);
@@ -113,7 +97,6 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
     });
 
     mm.add('(max-width: 959px)', () => {
-      // On mobile / tablet screens, clear transform and let vertical stack breathe
       gsap.set(track, { clearProps: 'all' });
       scrollTriggerRef.current = null;
     });
@@ -138,9 +121,6 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
     });
   };
 
-  const currentProjectNumber = String(activeSlideIndex + 1).padStart(2, '0');
-  const totalProjectsNumber = String(filteredProjects.length).padStart(2, '0');
-
   return (
     <section 
       id="work" 
@@ -153,57 +133,38 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
         <div className="site-container work-header-container">
           <div className="work-headline-wrap">
             <div className="work-title-badge-row">
-              <BlurText 
-                text="Featured Engineering" 
-                as="h2" 
-                className="work-giant-heading font-fraunces" 
-              />
-              {/* Dynamic Slide Counter & Nav for Desktop */}
-              <div className="work-slide-nav font-mono">
-                <span className="slide-count-badge">
-                  {currentProjectNumber} // {totalProjectsNumber}
-                </span>
-                <div className="slide-nav-arrows">
-                  <button
-                    type="button"
-                    className="nav-arrow-btn"
-                    onClick={() => handleSlideJump(activeSlideIndex - 1)}
-                    disabled={activeSlideIndex === 0}
-                    aria-label="Previous project"
-                  >
-                    ←
-                  </button>
-                  <button
-                    type="button"
-                    className="nav-arrow-btn"
-                    onClick={() => handleSlideJump(activeSlideIndex + 1)}
-                    disabled={activeSlideIndex === filteredProjects.length - 1}
-                    aria-label="Next project"
-                  >
-                    →
-                  </button>
-                </div>
+              <h2 className="work-giant-heading font-fraunces">
+                Featured Engineering
+              </h2>
+
+              {/* Minimal Clean Arrows Navigation */}
+              <div className="work-slide-nav">
+                <button
+                  type="button"
+                  className="nav-arrow-btn"
+                  onClick={() => handleSlideJump(activeSlideIndex - 1)}
+                  disabled={activeSlideIndex === 0}
+                  aria-label="Previous project"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  className="nav-arrow-btn"
+                  onClick={() => handleSlideJump(activeSlideIndex + 1)}
+                  disabled={activeSlideIndex === filteredProjects.length - 1}
+                  aria-label="Next project"
+                >
+                  →
+                </button>
               </div>
             </div>
 
-            <div className="work-meta-subrow">
-              <p className="work-subtext font-sans">
-                Developer tooling, mobile audio systems, and full-stack architectures — built with AST static analysis, React Native, MERN backends, and LLM automation.
-              </p>
+            <p className="work-subtext font-sans">
+              Developer tooling, mobile audio systems, and full-stack architectures — built with AST static analysis, React Native, MERN backends, and LLM automation.
+            </p>
 
-              {/* Progress Bar (Desktop) */}
-              <div className="work-scroll-progress-wrap" aria-hidden="true">
-                <div 
-                  className="work-scroll-progress-fill" 
-                  style={{ width: `${Math.max(12, scrollProgress * 100)}%` }}
-                />
-                <span className="scroll-cue font-mono">
-                  {scrollProgress > 0.05 ? 'Horizontal Track' : 'Scroll down to slide →'}
-                </span>
-              </div>
-            </div>
-
-            {/* Domain Filter Bar */}
+            {/* Domain Filter Bar — Clean labels, no number pills */}
             <div className="work-filter-bar" role="tablist" aria-label="Filter projects by domain">
               {filterOptions.map((opt) => {
                 const isActive = selectedFilter === opt.id;
@@ -216,8 +177,7 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
                     className={`work-filter-pill font-mono ${isActive ? 'is-active' : ''}`}
                     onClick={() => setSelectedFilter(opt.id)}
                   >
-                    <span className="pill-label">{opt.label}</span>
-                    <span className="pill-count">0{opt.count}</span>
+                    {opt.label}
                   </button>
                 );
               })}
@@ -233,7 +193,6 @@ export const Work: React.FC<WorkProps> = ({ onOpenModal }) => {
                 <ProjectCard 
                   project={project} 
                   index={index} 
-                  totalCount={filteredProjects.length}
                   onOpenModal={onOpenModal} 
                 />
               </div>

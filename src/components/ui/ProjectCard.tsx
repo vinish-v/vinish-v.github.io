@@ -10,10 +10,8 @@ interface ProjectCardProps {
   onOpenModal: (project: ProjectItem) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCount = 4, onOpenModal }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpenModal }) => {
   const isImageLeft = index % 2 === 0;
-  const projectNumber = String(index + 1).padStart(2, '0');
-  const formattedTotal = String(totalCount).padStart(2, '0');
 
   return (
     <article 
@@ -39,7 +37,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
       {/* Content description */}
       <div className="card-info-col">
         <div className="card-meta-row font-mono">
-          <span className="card-index-tag">{projectNumber} // {formattedTotal}</span>
           <span className="card-category-tag">{project.category}</span>
         </div>
 
