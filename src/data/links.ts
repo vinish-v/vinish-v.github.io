@@ -16,9 +16,9 @@ export const socialLinks = {
   },
   linkedin: {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/vinish-v-80bb1020b/",
-    handle: "vinish-v-80bb1020b",
-    label: "linkedin.com/in/vinish-v-80bb1020b",
+    url: "https://www.linkedin.com/in/vinish-v6/",
+    handle: "vinish-v6",
+    label: "linkedin.com/in/vinish-v6",
     isTodo: false
   },
   leetcode: {
