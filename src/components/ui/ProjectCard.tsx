@@ -6,16 +6,18 @@ import './ProjectCard.css';
 interface ProjectCardProps {
   project: ProjectItem;
   index: number;
+  totalCount?: number;
   onOpenModal: (project: ProjectItem) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpenModal }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCount = 4, onOpenModal }) => {
   const isImageLeft = index % 2 === 0;
-  const projectNumber = `0${index + 1}`;
+  const projectNumber = String(index + 1).padStart(2, '0');
+  const formattedTotal = String(totalCount).padStart(2, '0');
 
   return (
     <article 
-      className={`clean-project-card ${isImageLeft ? 'image-left' : 'image-right'}`}
+      className={`clean-project-card ${isImageLeft ? 'image-left' : 'image-right'} card-accent-${project.accent}`}
       onClick={() => onOpenModal(project)}
       tabIndex={0}
       role="button"
@@ -37,8 +39,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
       {/* Content description */}
       <div className="card-info-col">
         <div className="card-meta-row font-mono">
-          <span className="card-index-tag">{projectNumber} // 02</span>
-          <span className="card-category-tag">Production Architecture</span>
+          <span className="card-index-tag">{projectNumber} // {formattedTotal}</span>
+          <span className="card-category-tag">{project.category}</span>
         </div>
 
         <h3 className="card-title font-fraunces">
@@ -88,7 +90,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
             </a>
           ) : (
             <span className="card-pending-badge font-mono">
-              Deployment in progress
+              {project.id === 'deadcode-hunter' 
+                ? 'VS Code Marketplace Ready' 
+                : project.id === 'vinsic' 
+                ? 'Expo Preview / APK Ready' 
+                : 'Deployment in progress'}
             </span>
           )}
         </div>

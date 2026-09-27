@@ -55,7 +55,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Header bar */}
         <div className="modal-header">
           <div className="modal-title-wrap">
-            <span className="modal-category font-mono">Case Study</span>
+            <span className="modal-category font-mono">Case Study // {project.category}</span>
             <h2 id="modal-project-title" className="modal-title font-fraunces">{project.title}</h2>
           </div>
           <button 
@@ -139,7 +139,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </a>
             ) : (
               <span className="demo-pending-badge font-mono">
-                Deployment in progress
+                {project.id === 'deadcode-hunter'
+                  ? 'VS Code Marketplace Ready'
+                  : project.id === 'vinsic'
+                  ? 'Expo Mobile Build / APK Ready'
+                  : 'Deployment in progress'}
               </span>
             )}
           </div>

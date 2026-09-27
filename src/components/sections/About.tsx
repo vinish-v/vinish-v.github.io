@@ -145,9 +145,9 @@ export const About: React.FC = () => {
           {/* Right Column: Narrative & Details */}
           <div className="about-text-column">
             <p className="about-lead-statement font-fraunces">
-              I'm a final-year ECE student at KGISL Institute of Technology, building full-stack 
-              web applications with the MERN stack. My projects combine functional backends 
-              with LLM integrations — practical software that solves real problems.
+              I'm a final-year ECE student at KGISL Institute of Technology, building developer tools, 
+              cross-platform mobile systems, and full-stack web applications. My projects combine functional backends 
+              with AST analysis, audio engineering, and LLM integrations — practical software that solves real problems.
             </p>
 
             <div className="about-narrative">

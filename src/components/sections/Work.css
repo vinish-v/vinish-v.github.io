@@ -39,6 +39,54 @@
   max-width: var(--max-prose);
 }
 
+/* Domain Filter Pill Bar */
+.work-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.work-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background-color: var(--slate);
+  border: 1px solid var(--border);
+  color: var(--peach);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.work-filter-pill:hover {
+  background-color: var(--surface-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.work-filter-pill.is-active {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+.pill-count {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.work-filter-pill.is-active .pill-count {
+  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
 .work-projects-list {
   display: flex;
   flex-direction: column;

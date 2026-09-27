@@ -78,20 +78,41 @@
   text-transform: uppercase;
 }
 
-/* Project 1 (AI HR): Electric Blue Accent */
-.clean-project-card:nth-child(1) .card-category-tag {
-  color: var(--accent-blue);
+/* Card Accent Variants */
+.clean-project-card.card-accent-emerald .card-category-tag {
+  color: var(--accent-emerald);
 }
-.clean-project-card:nth-child(1):hover {
-  border-color: var(--accent-blue-border);
+.clean-project-card.card-accent-emerald:hover,
+.clean-project-card.card-accent-emerald:focus-visible {
+  border-color: var(--accent-emerald-border);
+  box-shadow: 0 12px 36px -10px var(--accent-emerald-dim);
 }
 
-/* Project 2 (Chat App): Radiant Orange Accent */
-.clean-project-card:nth-child(2) .card-category-tag {
+.clean-project-card.card-accent-purple .card-category-tag {
+  color: var(--accent-purple);
+}
+.clean-project-card.card-accent-purple:hover,
+.clean-project-card.card-accent-purple:focus-visible {
+  border-color: var(--accent-purple-border);
+  box-shadow: 0 12px 36px -10px var(--accent-purple-dim);
+}
+
+.clean-project-card.card-accent-blue .card-category-tag {
+  color: var(--accent-blue);
+}
+.clean-project-card.card-accent-blue:hover,
+.clean-project-card.card-accent-blue:focus-visible {
+  border-color: var(--accent-blue-border);
+  box-shadow: 0 12px 36px -10px var(--accent-blue-dim);
+}
+
+.clean-project-card.card-accent-orange .card-category-tag {
   color: var(--accent-orange);
 }
-.clean-project-card:nth-child(2):hover {
+.clean-project-card.card-accent-orange:hover,
+.clean-project-card.card-accent-orange:focus-visible {
   border-color: var(--accent-orange-border);
+  box-shadow: 0 12px 36px -10px var(--accent-orange-dim);
 }
 
 .card-title {

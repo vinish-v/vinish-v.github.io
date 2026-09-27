@@ -33,13 +33,13 @@ export const profileData: ProfileData = {
   cgpa: "8.0",
   targetLocations: ["Bangalore", "Chennai", "Hyderabad", "Coimbatore"],
   bio: [
-    "I'm a final-year ECE student at KGISL Institute of Technology, building full-stack web applications with the MERN stack.",
-    "My projects combine functional backends with LLM integrations — practical software that solves real problems rather than technology for its own sake.",
+    "I'm a final-year ECE student at KGISL Institute of Technology, building developer tools, cross-platform mobile apps, and full-stack web applications.",
+    "My projects combine functional backends with AST static analysis, React Native audio engineering, and LLM integrations — practical software that solves real problems.",
     "Currently seeking full-time roles and internships in Bangalore, Chennai, Hyderabad, and Coimbatore."
   ],
   hero: {
     name: "VINISH V.",
-    role: "Full-Stack Developer",
-    statement: "Building functional software —\nfrom REST APIs to real-time systems."
+    role: "Full-Stack & Systems Developer",
+    statement: "Building functional software —\nfrom developer tools to real-time systems."
   }
 };
